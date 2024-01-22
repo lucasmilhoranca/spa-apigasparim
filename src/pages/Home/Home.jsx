@@ -3,6 +3,7 @@ import { Navbar } from "../../components/Navbar/Navbar.jsx"
 import { getAllChecks } from "../../services/controleService.js";
 import { HomeBody } from "./HomeStyled.jsx";
 import { useState, useEffect } from "react";
+import { FooterBar } from "../../components/Footer/Footer.jsx";
 
 export default function Home() {
 
@@ -27,7 +28,7 @@ export default function Home() {
                     return <Card key={item.id} cpf={item.cpf} nome={item.nome} sobrenome={item.sobrenome} data={item.data} horarioEntrada={item.horarioEntrada} horarioSaida={item.horarioSaida} status={item.status} />;
                 })}
             </HomeBody>
-
+            <FooterBar />
         </>
     );
 }
