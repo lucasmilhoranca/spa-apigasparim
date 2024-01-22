@@ -11,13 +11,6 @@ export const Foot = styled.footer`
     background-color: #fff;
     z-index: 1;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
-
-    div {
-        display: flex;
-        gap: 1rem;
-
-
-    }
 `;
 
 export const ButtonCad = styled.button`
@@ -60,4 +53,11 @@ export const ButtonCheck = styled.button`
     &:hover{
         background-color: #ff9a00;
     }
+`;
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
 `;

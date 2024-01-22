@@ -1,14 +1,14 @@
 import logo from "../../images/grupogasparim_logo.jpeg";
-import { Foot, ButtonCad, ButtonCheck } from "./FooterStyled.jsx";
+import { Foot, ButtonCad, ButtonCheck, ButtonContainer } from "./FooterStyled.jsx";
 
 export function FooterBar() {
     return (
         <>
             <Foot>
-                <div>
+                <ButtonContainer>
                     <ButtonCheck>CHECKIN</ButtonCheck>
                     <ButtonCad>CADASTRAR</ButtonCad>
-                </div>
+                </ButtonContainer>
             </Foot>
         </>
     );
