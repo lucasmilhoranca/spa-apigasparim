@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const Foot = styled.footer`
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     max-width: 100%;
     padding: 1rem;
-    /* position: fixed;
-    top: 0; */
-    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #FFF;
     z-index: 1;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 `;
@@ -24,7 +24,6 @@ export const ButtonCad = styled.button`
     cursor: pointer;
     border-radius: 0.3rem;
     font-family: Roboto, Arial;
-    /* width: 40%; */
     font-weight: 500;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -45,7 +44,6 @@ export const ButtonCheck = styled.button`
     cursor: pointer;
     border-radius: 0.3rem;
     font-family: Roboto, Arial;
-    /* width: 40%; */
     font-weight: 500;
     letter-spacing: 0.1rem;
     text-transform: uppercase;
@@ -57,7 +55,7 @@ export const ButtonCheck = styled.button`
 
 export const ButtonContainer = styled.div`
     display: flex;
-    gap: 1rem;
+    gap: 5rem;
     align-items: center;
     justify-content: center;
 `;
