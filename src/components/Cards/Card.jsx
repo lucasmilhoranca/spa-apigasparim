@@ -8,7 +8,7 @@ export function Card(props) {
         <CardContainer>
             <CardBody>
                 <h4>CPF: {formatCPF(props.cpf)}</h4>
-                <h4>NOME: {props.nome} {props.sobrenome}</h4>
+                <h4>NOME: {props.nome.toUpperCase()} {props.sobrenome.toUpperCase()}</h4>
                 <h3>Data: {formatDate(props.data)}</h3>
             </CardBody>
             <CardBody>
