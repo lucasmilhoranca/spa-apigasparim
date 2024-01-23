@@ -8,7 +8,7 @@ export const Foot = styled.footer`
     position: fixed;
     width: 100%;
     bottom: 0;
-    background-color: #FFF;
+    background-color: #f8f8ff;
     z-index: 1;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 `;
@@ -17,6 +17,7 @@ export const ButtonCad = styled.button`
     background-color: #2eb451;
     border: none;
     outline: none;
+    width: 180px;
     font-size: 1rem;
     padding: 0.4rem 1rem;
     color: #fff;
@@ -37,6 +38,7 @@ export const ButtonCheck = styled.button`
     background-color: #ffa400;
     border: none;
     outline: none;
+    width: 180px;
     font-size: 1rem;
     padding: 0.4rem 1rem;
     color: #fff;
@@ -55,7 +57,7 @@ export const ButtonCheck = styled.button`
 
 export const ButtonContainer = styled.div`
     display: flex;
-    gap: 5rem;
+    gap: 10rem;
     align-items: center;
     justify-content: center;
 `;
