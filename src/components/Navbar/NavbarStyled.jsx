@@ -27,15 +27,23 @@ export const InputSpace = styled.div`
     display: flex;
     align-items: center;
 
-    i {
+    button {
         position: absolute;
         top: 1;
         right: 0.2rem;
         z-index: 10;
         border: none;
         background-color: #f5f5f5;
+        color: #757575;
         border-radius: 0.3rem;
         padding: 0.5rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover{
+        background-color: #757575;
+        color: #f5f5f5
     }
 
     input {

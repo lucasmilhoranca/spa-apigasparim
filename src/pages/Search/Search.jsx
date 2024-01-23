@@ -1,7 +1,10 @@
+import { useParams } from "react-router-dom"
+
 export function Search() {
+    const { cpf } = useParams()
     return (
         <>
-            <h1>Search</h1>
+            <h1>{cpf}</h1>
         </>
     )
-}
+} 
