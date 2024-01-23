@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import logo from "../../images/grupogasparim_logo.jpeg";
 import { Button, ImageLogo, InputSpace, Nav } from "./NavbarStyled.jsx";
 
@@ -14,6 +15,7 @@ export function Navbar() {
 
                 <Button>Entrar</Button>
             </Nav>
+            <Outlet/>
         </>
     );
 }

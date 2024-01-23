@@ -7,7 +7,7 @@ export default function Cadastro() {
             <Navbar />
             <CadBody>
                 <CadContainer>
-                    
+                    <h1>Hello World</h1>
                 </CadContainer>
             </CadBody>
         </>
