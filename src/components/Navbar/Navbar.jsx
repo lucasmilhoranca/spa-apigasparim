@@ -1,10 +1,22 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import logo from "../../images/grupogasparim_logo.jpeg";
-import { Button, ImageLogo, InputSpace, Nav } from "./NavbarStyled.jsx";
+import { Button, ErrorSpan, ImageLogo, InputSpace, Nav } from "./NavbarStyled.jsx";
 import { useForm } from "react-hook-form";
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+
+const searchSchema = z.object({
+    cpf: z.string()
+    .min(11, "O CPF deve ter 11 dígitos")
+    .max(11, "O CPF deve ter 11 dígitos")
+    .refine(value => !/^\s*$/.test(value), {message: "O CPF não pode ser vazio"})
+    .refine(value => /^[0-9]+$/.test(value), { message: "O CPF deve conter apenas números" }),
+})
 
 export function Navbar() {
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm({
+        resolver: zodResolver(searchSchema),
+    });
     const navigate = useNavigate();
 
     function onSearch(data) {
@@ -31,6 +43,7 @@ export function Navbar() {
 
                 <Button>Entrar</Button>
             </Nav>
+            {errors.cpf && <ErrorSpan>{errors.cpf.message}</ErrorSpan>}
             <Outlet />
         </>
     );
