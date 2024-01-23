@@ -8,7 +8,7 @@ export const Foot = styled.footer`
     position: fixed;
     width: 100%;
     bottom: 0;
-    background-color: #f8f8ff;
+    background-color: #FFF;
     z-index: 1;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 `;
