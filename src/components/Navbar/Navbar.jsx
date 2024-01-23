@@ -4,7 +4,7 @@ import { Button, ImageLogo, InputSpace, Nav } from "./NavbarStyled.jsx";
 import { useForm } from "react-hook-form";
 
 export function Navbar() {
-    const { register, handleSubmit, watch, reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const navigate = useNavigate();
 
     function onSearch(data) {
@@ -12,7 +12,7 @@ export function Navbar() {
         navigate(`/search/${cpf}`);
         reset();
     }
-    
+
     return (
         <>
             <Nav>
