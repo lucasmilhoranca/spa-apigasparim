@@ -41,8 +41,8 @@ export function Auth() {
                     <Input type="password" placeholder="Senha" name="password" register={register} />
                     {errors.password && <ErrorSpan>{errors.password.message}</ErrorSpan>}
                     <ButtonContainer>
-                        <ButtonCheck type="submit" text="Entrar"></ButtonCheck>
-                        <ButtonCad type="submit" text="Cadastrar"></ButtonCad>
+                        <ButtonCad type="submit" text="Entrar"></ButtonCad>
+                        <ButtonCheck type="submit" text="Cadastrar"></ButtonCheck>
                     </ButtonContainer>
                 </form>
             </Section>
