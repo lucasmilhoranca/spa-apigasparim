@@ -3,13 +3,9 @@ import { ButtonContainer } from "../../components/Button/ButtonStyled";
 import { Input } from "../../components/Input/Input";
 import { AuthContainer, Section } from "./AuthStyled";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
 import { ButtonCad, ButtonCheck } from "../../components/Button/Button";
-
-const signSchema = z.object({
-    usuario: z.string(),
-    password: z.string()
-})
+import { signSchema } from "../../utils/schemas/signSchema";
+import { ErrorSpan } from "../../components/Navbar/NavbarStyled";
 
 export function Auth() {
 
@@ -41,7 +37,9 @@ export function Auth() {
                 <h2>Entrar</h2>
                 <form onSubmit={handleSubmit(handleFormSubmit)}>
                     <Input type="text" placeholder="Usuário" name="usuario" register={register} />
+                    {errors.usuario && <ErrorSpan>{errors.usuario.message}</ErrorSpan>}
                     <Input type="password" placeholder="Senha" name="password" register={register} />
+                    {errors.password && <ErrorSpan>{errors.password.message}</ErrorSpan>}
                     <ButtonContainer>
                         <ButtonCheck type="submit" text="Entrar"></ButtonCheck>
                         <ButtonCad type="submit" text="Cadastrar"></ButtonCad>
