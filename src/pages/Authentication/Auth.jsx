@@ -32,12 +32,7 @@ export function Auth() {
         const clickedButton = event.nativeEvent.submitter;
         const buttonText = clickedButton.textContent;
 
-        if(buttonText === "Cadastrar"){
-            onHandleSubmit(data)
-        } else if (buttonText === "Entrar") {
-            inHandleSubmit(data)
-        }
-
+        buttonText === "Entrar" ? inHandleSubmit(data) : onHandleSubmit(data)
     }
 
     return (
