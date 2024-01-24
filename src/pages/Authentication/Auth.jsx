@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { ButtonCad, ButtonCheck } from "../../components/Button/Button";
 import { signSchema } from "../../utils/schemas/signSchema";
 import { ErrorSpan } from "../../components/Navbar/NavbarStyled";
+import { createUser, loginUser } from "../../services/userService";
 
 export function Auth() {
 
@@ -13,14 +14,22 @@ export function Auth() {
         resolver: zodResolver(signSchema),
     });
 
-    function inHandleSubmit(data) {
-        console.log(data)+"entrar";
-        console.log("entrar")
+    async function inHandleSubmit(data) {
+        try {
+            const response = await loginUser(data);
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        } 
     }
 
-    function onHandleSubmit(data) {
-        console.log(data)
-        console.log("cadastro")
+    async function onHandleSubmit(data) {
+        try {
+            const response = await createUser(data);
+            console.log(response);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     function handleFormSubmit(data, event) {
