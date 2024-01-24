@@ -21,7 +21,7 @@ export const ButtonSpace = styled.button`
     }
 `;
 
-export const ButtonCa = styled.button`
+export const GreenButton = styled.button`
     background-color: #2eb451;
     border: none;
     outline: none;
@@ -42,7 +42,7 @@ export const ButtonCa = styled.button`
     }
 `;
 
-export const ButtonChe = styled.button`
+export const OrangeButton = styled.button`
     background-color: #ffa400;
     border: none;
     outline: none;
