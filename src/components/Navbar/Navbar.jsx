@@ -1,16 +1,17 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import logo from "../../images/grupogasparim_logo.jpeg";
-import { Button, ErrorSpan, ImageLogo, InputSpace, Nav } from "./NavbarStyled.jsx";
+import { ErrorSpan, ImageLogo, InputSpace, Nav } from "./NavbarStyled.jsx";
 import { useForm } from "react-hook-form";
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { Button } from "../Button/Button.jsx";
 
 const searchSchema = z.object({
     cpf: z.string()
-    .min(10, "O CPF deve ter 11 dígitos")
-    .max(11, "O CPF deve ter 11 dígitos")
-    .refine(value => !/^\s*$/.test(value), {message: "O CPF não pode ser vazio"})
-    .refine(value => /^[0-9]+$/.test(value), { message: "O CPF deve conter apenas números" }),
+        .min(10, "O CPF deve ter 11 dígitos")
+        .max(11, "O CPF deve ter 11 dígitos")
+        .refine(value => !/^\s*$/.test(value), { message: "O CPF não pode ser vazio" })
+        .refine(value => /^[0-9]+$/.test(value), { message: "O CPF deve conter apenas números" }),
 })
 
 export function Navbar() {
@@ -41,7 +42,9 @@ export function Navbar() {
                     <ImageLogo src={logo} alt="Logo Gasparim" />
                 </Link>
 
-                <Button>Entrar</Button>
+                <Link to="/auth">
+                    <Button type="button" text="Entrar" cor="#2eb451" />
+                </Link>
             </Nav>
             {errors.cpf && <ErrorSpan>{errors.cpf.message}</ErrorSpan>}
             <Outlet />
