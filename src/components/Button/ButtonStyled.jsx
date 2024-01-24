@@ -21,7 +21,7 @@ export const ButtonSpace = styled.button`
     }
 `;
 
-export const ButtonCad = styled.button`
+export const ButtonCa = styled.button`
     background-color: #2eb451;
     border: none;
     outline: none;
@@ -42,7 +42,7 @@ export const ButtonCad = styled.button`
     }
 `;
 
-export const ButtonCheck = styled.button`
+export const ButtonChe = styled.button`
     background-color: #ffa400;
     border: none;
     outline: none;
