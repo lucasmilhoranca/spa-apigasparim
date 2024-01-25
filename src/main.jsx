@@ -8,6 +8,7 @@ import { Search } from './pages/Search/Search.jsx'
 import { GlobalStyle } from './GlobalStyled.jsx'
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import { Auth } from './pages/Authentication/Auth.jsx'
+import Cadastro from './pages/Cadastro/Cadastro.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
 	{
 		path: '/auth',
 		element: <Auth />
+	},
+	{
+		path: '/cadastro',
+		element: <Cadastro />
 	}
 ])
 
