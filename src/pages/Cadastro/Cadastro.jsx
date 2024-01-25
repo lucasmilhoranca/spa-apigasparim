@@ -7,12 +7,6 @@ import { CustomSelection } from "../../components/Selection/Selection";
 import { pessoaSchema, funcionarioSchema, caminhoneiroSchema, visitanteSchema } from "../../utils/schemas/cadastroSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-const schemaMap = {
-    "Funcionário": funcionarioSchema,
-    "Caminhoneiro": caminhoneiroSchema,
-    "Visitante": visitanteSchema,
-}
-
 const tipoCamposMap = {
     "Funcionário": ["cpf", "nome", "sobrenome", "setor", "departamento", "tipo", "cargo"],
     "Caminhoneiro": ["cpf", "nome", "sobrenome", "setor", "departamento", "tipo", "placa", "empresa"],
@@ -21,7 +15,7 @@ const tipoCamposMap = {
 
 export default function Cadastro() {
     const { register, handleSubmit, reset, formState: { errors }, watch } = useForm({
-        resolver: zodResolver(pessoaSchema),
+
     });
 
     const tipoSelecionado = watch('tipo');
@@ -43,9 +37,11 @@ export default function Cadastro() {
                         <Input type="text" placeholder="CPF" name="cpf" register={register} />
                         <Input type="text" placeholder="Nome" name="nome" register={register} />
                         <Input type="text" placeholder="Sobrenome" name="sobrenome" register={register} />
+
                         <CustomSelection options={["Sementes", "Nutrição"]} placeholder="Setor" name="setor" register={register} />
                         <Input type="text" placeholder="Departamento" name="departamento" register={register} />
                         <CustomSelection options={["Funcionário", "Caminhoneiro", "Visitante"]} placeholder="Tipo" name="tipo" register={register} />
+
 
                         {tipoSelecionado === "Funcionário" && (
                             <Input type="text" placeholder="Cargo" name="cargo" register={register} />
