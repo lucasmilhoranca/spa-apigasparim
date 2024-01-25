@@ -6,6 +6,7 @@ import { CadBody, CadContainer } from "./CadastroStyled";
 import { CustomSelection } from "../../components/Selection/Selection";
 import { pessoaSchema, funcionarioSchema, caminhoneiroSchema, visitanteSchema } from "../../utils/schemas/cadastroSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Link } from "react-router-dom";
 
 const tipoCamposMap = {
     "Funcionário": ["cpf", "nome", "sobrenome", "setor", "departamento", "tipo", "cargo"],
@@ -57,7 +58,9 @@ export default function Cadastro() {
                         )}
 
                         <ButtonContainer>
-                            <OrangeButton type="button" onClick={() => reset()} text="Cancelar" />
+                            <Link to="/">
+                                <OrangeButton type="button" onClick={() => reset()} text="Cancelar" />
+                            </Link>
                             <GreenButton type="submit" text="Cadastrar"></GreenButton>
                         </ButtonContainer>
                     </form>
