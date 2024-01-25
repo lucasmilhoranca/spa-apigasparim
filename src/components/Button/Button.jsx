@@ -1,13 +1,13 @@
-import { ButtonSpace, GreenButton, OrangeButton } from "./ButtonStyled";
+import { ButtonSpace, OrangeB, GreenB } from "./ButtonStyled";
 
 export function Button({ type, text, cor }) {
     return <ButtonSpace type={type} cor={cor} >{text}</ButtonSpace>
 }
 
-export function ButtonCheck({ type, text }) {
-    return <GreenButton type={type}>{text}</GreenButton>
+export function GreenButton({ type, text }) {
+    return <GreenB type={type}>{text}</GreenB>
 }
 
-export function ButtonCad({ type, text }) {
-    return <OrangeButton type={type} >{text}</OrangeButton>
+export function OrangeButton({ type, text }) {
+    return <OrangeB type={type} >{text}</OrangeB>
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Foot, ButtonCad, ButtonCheck, ButtonContainer } from "./FooterStyled.jsx";
 
 export function FooterBar() {
@@ -6,7 +7,9 @@ export function FooterBar() {
             <Foot>
                 <ButtonContainer>
                     <ButtonCheck>CHECKIN</ButtonCheck>
-                    <ButtonCad>CADASTRAR</ButtonCad>
+                    <Link to="/cadastro">
+                        <ButtonCad>CADASTRAR</ButtonCad>
+                    </Link>
                 </ButtonContainer>
             </Foot>
         </>

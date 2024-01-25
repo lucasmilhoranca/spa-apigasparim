@@ -3,7 +3,7 @@ import { ButtonContainer } from "../../components/Button/ButtonStyled";
 import { Input } from "../../components/Input/Input";
 import { AuthContainer, Section } from "./AuthStyled";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ButtonCad, ButtonCheck } from "../../components/Button/Button";
+import { GreenButton, OrangeButton } from "../../components/Button/Button";
 import { signSchema } from "../../utils/schemas/signSchema";
 import { ErrorSpan } from "../../components/Navbar/NavbarStyled";
 import { createUser, loginUser } from "../../services/userService";
@@ -50,8 +50,8 @@ export function Auth() {
                     <Input type="password" placeholder="Senha" name="password" register={register} />
                     {errors.password && <ErrorSpan>{errors.password.message}</ErrorSpan>}
                     <ButtonContainer>
-                        <ButtonCad type="submit" text="Entrar"></ButtonCad>
-                        <ButtonCheck type="submit" text="Cadastrar"></ButtonCheck>
+                        <GreenButton type="submit" text="Entrar"></GreenButton>
+                        <OrangeButton type="submit" text="Cadastrar"></OrangeButton>
                     </ButtonContainer>
                 </form>
             </Section>
