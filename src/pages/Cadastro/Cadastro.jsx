@@ -7,6 +7,7 @@ import { CustomSelection } from "../../components/Selection/Selection";
 import { pessoaSchema, funcionarioSchema, caminhoneiroSchema, visitanteSchema } from "../../utils/schemas/cadastroSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
+import { ErrorSpan } from "../../components/Navbar/NavbarStyled";
 
 const tipoCamposMap = {
     "Funcionário": ["cpf", "nome", "sobrenome", "setor", "departamento", "tipo", "cargo"],
@@ -16,7 +17,7 @@ const tipoCamposMap = {
 
 export default function Cadastro() {
     const { register, handleSubmit, reset, formState: { errors }, watch } = useForm({
-
+        resolver: zodResolver(pessoaSchema),
     });
 
     const tipoSelecionado = watch('tipo');
@@ -36,12 +37,18 @@ export default function Cadastro() {
                     <h2>Cadastro de Pessoa</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <Input type="text" placeholder="CPF" name="cpf" register={register} />
+                        {errors.cpf && <ErrorSpan>{errors.cpf.message}</ErrorSpan>}
                         <Input type="text" placeholder="Nome" name="nome" register={register} />
+                        {errors.nome && <ErrorSpan>{errors.nome.message}</ErrorSpan>}
                         <Input type="text" placeholder="Sobrenome" name="sobrenome" register={register} />
+                        {errors.sobrenome && <ErrorSpan>{errors.sobrenome.message}</ErrorSpan>}
 
                         <CustomSelection options={["Sementes", "Nutrição"]} placeholder="Setor" name="setor" register={register} />
+                        {errors.setor && <ErrorSpan>{errors.setor.message}</ErrorSpan>}
                         <Input type="text" placeholder="Departamento" name="departamento" register={register} />
+                        {errors.departamento && <ErrorSpan>{errors.departamento.message}</ErrorSpan>}
                         <CustomSelection options={["Funcionário", "Caminhoneiro", "Visitante"]} placeholder="Tipo" name="tipo" register={register} />
+                        {errors.tipo && <ErrorSpan>{errors.tipo.message}</ErrorSpan>}
 
 
                         {tipoSelecionado === "Funcionário" && (

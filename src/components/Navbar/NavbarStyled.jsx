@@ -61,12 +61,19 @@ export const InputSpace = styled.div`
     }
 `;
 
+// export const ErrorSpan = styled.span`
+//   color: #ff3333;
+//   padding: 0.5rem;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   font-size: 1rem;
+//   border-radius: 5px;
+//   margin-top: 0.5rem;
+// `;
+
 export const ErrorSpan = styled.span`
-    background-color: #ffcdcd;
-    color: #9e0000;
-    padding: .5rem;
-    display: flex;
-    justify-content: center;
-    font-size: 1rem;
-    border-radius: 7px;
-`
+  color: #ff3333;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+`;

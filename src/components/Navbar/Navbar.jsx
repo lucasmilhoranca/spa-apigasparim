@@ -28,6 +28,7 @@ export function Navbar() {
                         </button>
                         <input {...register("cpf")} type="text" placeholder="Pesquise por um CPF" />
                     </InputSpace>
+                    {errors.cpf && <ErrorSpan>{errors.cpf.message}</ErrorSpan>}
                 </form>
 
                 <Link to="/">
@@ -38,7 +39,7 @@ export function Navbar() {
                     <Button type="button" text="Entrar" cor="#2eb451" />
                 </Link>
             </Nav>
-            {errors.cpf && <ErrorSpan>{errors.cpf.message}</ErrorSpan>}
+            
             <Outlet />
         </>
     );
