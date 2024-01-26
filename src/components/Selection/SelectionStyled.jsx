@@ -6,4 +6,9 @@ export const StyledSelect = styled.select`
   border: 1px solid #ccc;
   font-size: 16px;
   margin-bottom: 10px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid #2eb451;
+  }
 `;
