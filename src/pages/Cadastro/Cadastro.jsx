@@ -64,7 +64,6 @@ export default function Cadastro() {
 
                         <CustomSelection options={setoresPermitidos} placeholder="Setor" name="setor" register={register} />
                         {errors.setor && <ErrorSpan>{errors.setor.message}</ErrorSpan>}
-                        {/* <Input type="text" placeholder="Departamento" name="departamento" register={register} /> */}
                         <CustomSelection options={departamentosPermitidos} placeholder="Departamento" name="departamento" register={register} />
                         {errors.departamento && <ErrorSpan>{errors.departamento.message}</ErrorSpan>}
                         <CustomSelection options={tiposPermitidos} placeholder="Tipo" name="tipo" register={register} />
