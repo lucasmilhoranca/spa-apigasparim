@@ -4,7 +4,7 @@ import { ButtonContainer } from "../../components/Button/ButtonStyled";
 import { Input } from "../../components/Input/Input";
 import { CadBody, CadContainer } from "./CadastroStyled";
 import { CustomSelection } from "../../components/Selection/Selection";
-import { pessoaSchema, funcionarioSchema, caminhoneiroSchema, visitanteSchema } from "../../utils/schemas/cadastroSchema";
+import { pessoaSchema } from "../../utils/schemas/cadastroSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
 import { ErrorSpan } from "../../components/Navbar/NavbarStyled";
@@ -14,6 +14,25 @@ const tipoCamposMap = {
     "Caminhoneiro": ["cpf", "nome", "sobrenome", "setor", "departamento", "tipo", "placa", "empresa"],
     "Visitante": ["cpf", "nome", "sobrenome", "setor", "departamento", "tipo", "pessoaResponsavel"],
 };
+
+const tiposPermitidos = ["Funcionário", "Caminhoneiro", "Visitante"];
+
+const setoresPermitidos = ["Sementes", "Nutrição"];
+
+const departamentosPermitidos = [
+    "Almoxarifado",
+    "Cobrança",
+    "Compras",
+    "Contabilidade",
+    "Desenvolvimento",
+    "Diretoria",
+    "Financeiro",
+    "Logística",
+    "Marketing",
+    "Produção",
+    "RH",
+    "Vendas",
+];
 
 export default function Cadastro() {
     const { register, handleSubmit, reset, formState: { errors }, watch } = useForm({
@@ -43,11 +62,12 @@ export default function Cadastro() {
                         <Input type="text" placeholder="Sobrenome" name="sobrenome" register={register} />
                         {errors.sobrenome && <ErrorSpan>{errors.sobrenome.message}</ErrorSpan>}
 
-                        <CustomSelection options={["Sementes", "Nutrição"]} placeholder="Setor" name="setor" register={register} />
+                        <CustomSelection options={setoresPermitidos} placeholder="Setor" name="setor" register={register} />
                         {errors.setor && <ErrorSpan>{errors.setor.message}</ErrorSpan>}
-                        <Input type="text" placeholder="Departamento" name="departamento" register={register} />
+                        {/* <Input type="text" placeholder="Departamento" name="departamento" register={register} /> */}
+                        <CustomSelection options={departamentosPermitidos} placeholder="Departamento" name="departamento" register={register} />
                         {errors.departamento && <ErrorSpan>{errors.departamento.message}</ErrorSpan>}
-                        <CustomSelection options={["Funcionário", "Caminhoneiro", "Visitante"]} placeholder="Tipo" name="tipo" register={register} />
+                        <CustomSelection options={tiposPermitidos} placeholder="Tipo" name="tipo" register={register} />
                         {errors.tipo && <ErrorSpan>{errors.tipo.message}</ErrorSpan>}
 
 

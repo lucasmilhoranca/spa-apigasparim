@@ -75,5 +75,5 @@ export const InputSpace = styled.div`
 export const ErrorSpan = styled.span`
   color: #ff3333;
   font-size: 1rem;
-  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 `;
