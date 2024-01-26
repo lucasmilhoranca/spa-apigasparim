@@ -59,15 +59,19 @@ export default function Cadastro() {
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <Input type="text" placeholder="CPF" name="cpf" register={register} />
                         {errors.cpf && <ErrorSpan>{errors.cpf.message}</ErrorSpan>}
+
                         <Input type="text" placeholder="Nome" name="nome" register={register} />
                         {errors.nome && <ErrorSpan>{errors.nome.message}</ErrorSpan>}
+
                         <Input type="text" placeholder="Sobrenome" name="sobrenome" register={register} />
                         {errors.sobrenome && <ErrorSpan>{errors.sobrenome.message}</ErrorSpan>}
 
                         <CustomSelection options={setoresPermitidos} placeholder="Setor" name="setor" register={register} />
                         {errors.setor && <ErrorSpan>{errors.setor.message}</ErrorSpan>}
+
                         <CustomSelection options={departamentosPermitidos} placeholder="Departamento" name="departamento" register={register} />
                         {errors.departamento && <ErrorSpan>{errors.departamento.message}</ErrorSpan>}
+                        
                         <CustomSelection options={tiposPermitidos} placeholder="Tipo" name="tipo" register={register} />
                         {errors.tipo && <ErrorSpan>{errors.tipo.message}</ErrorSpan>}
 
