@@ -69,12 +69,11 @@ export default function Cadastro() {
                         <CustomSelection options={setoresPermitidos} placeholder="Setor" name="setor" register={register} />
                         {errors.setor && <ErrorSpan>{errors.setor.message}</ErrorSpan>}
 
-                        <CustomSelection options={departamentosPermitidos} placeholder="Departamento" name="departamento" register={register} />
-                        {errors.departamento && <ErrorSpan>{errors.departamento.message}</ErrorSpan>}
-                        
                         <CustomSelection options={tiposPermitidos} placeholder="Tipo" name="tipo" register={register} />
                         {errors.tipo && <ErrorSpan>{errors.tipo.message}</ErrorSpan>}
 
+                        <CustomSelection options={tipoSelecionado === "Caminhoneiro" ? ["Logística", "Fábrica"] : departamentosPermitidos} placeholder="Departamento" name="departamento" register={register} />
+                        {errors.departamento && <ErrorSpan>{errors.departamento.message}</ErrorSpan>}
 
                         {tipoSelecionado === "Funcionário" && (
                             <Input type="text" placeholder="Cargo" name="cargo" register={register} />
