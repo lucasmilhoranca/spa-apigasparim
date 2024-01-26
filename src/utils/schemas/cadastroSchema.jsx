@@ -8,8 +8,10 @@ export const pessoaSchema = z.object({
         .refine(value => /^[0-9]+$/.test(value), { message: "O CPF deve conter apenas números" }),
     nome: z.string().min(3, "O nome deve ter pelo menos 3 letras"),
     sobrenome: z.string().min(3, "O sobrenome deve ter pelo menos 3 letras"),
-    setor: z.string().refine(value => value === "Sementes" || value === "Nutrição"),
+    setor: z.string().refine(value => value === "Sementes" || value === "Nutrição", "O setor deve ser 'Sementes' ou 'Nutrição'"),
     departamento: z.string().min(1, "O departamento deve ter pelo menos 1 letra"),
+    tipo: z.string()
+        .refine(value => value === "Funcionário" || value === "Caminhoneiro" || value === "Visitante", "O tipo deve ser 'Funcionário', 'Caminhoneiro' ou 'Visitante'"),
 })
 
 export const funcionarioSchema = pessoaSchema.extend({
