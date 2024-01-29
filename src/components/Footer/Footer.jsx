@@ -6,7 +6,10 @@ export function FooterBar() {
         <>
             <Foot>
                 <ButtonContainer>
-                    <ButtonCheck>CHECKIN</ButtonCheck>
+                    <Link to="/check">
+                        <ButtonCheck>CHECKIN</ButtonCheck>
+                    </Link>
+
                     <Link to="/cadastro">
                         <ButtonCad>CADASTRAR</ButtonCad>
                     </Link>

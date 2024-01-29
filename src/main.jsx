@@ -9,6 +9,7 @@ import { GlobalStyle } from './GlobalStyled.jsx'
 import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import { Auth } from './pages/Authentication/Auth.jsx'
 import Cadastro from './pages/Cadastro/Cadastro.jsx'
+import Check from './pages/Check/Check.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
 	{
 		path: '/cadastro',
 		element: <Cadastro />
+	},
+	{
+		path: 'check',
+		element: <Check />
 	}
 ])
 
