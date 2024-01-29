@@ -36,6 +36,10 @@ export const pessoaSchema = z.object({
         .refine(value => departamentosPermitidos.includes(value), `O departamento deve ser ${departamentosPermitidos.join(', ')}`), 
     tipo: z.string()
         .refine(value => tiposPermitidos.includes(value), `O tipo deve ser ${tiposPermitidos.join(', ')}`),
+    cargo: z.optional(z.string().min(3, "O cargo não pode ser vazio")),
+    placa: z.optional(z.string().min(3, "A placa deve ter pelo menos 7 letras")),
+    empresa: z.optional(z.string().min(3, "A empresa não pode ser vazia")),
+    pessoaResponsavel: z.optional(z.string().min(3, "A pessoa responsável não pode ser vazia")),
 })
 
 export const funcionarioSchema = pessoaSchema.extend({
