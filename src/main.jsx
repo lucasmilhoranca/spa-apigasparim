@@ -10,6 +10,7 @@ import ErrorPage from './pages/ErrorPage/ErrorPage.jsx'
 import { Auth } from './pages/Authentication/Auth.jsx'
 import Cadastro from './pages/Cadastro/Cadastro.jsx'
 import Check from './pages/Check/Check.jsx'
+import UserProvider from './Context/userContext.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
 		<GlobalStyle />
-		<RouterProvider router={router} />
+		<UserProvider>
+			<RouterProvider router={router} />
+		</UserProvider>
 	</React.StrictMode>,
 )

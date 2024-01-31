@@ -77,3 +77,28 @@ export const ErrorSpan = styled.span`
   font-size: 1rem;
   margin-bottom: 0.5rem;
 `;
+
+export const UserLoggedSpace = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    gap: 1rem;
+
+    h2 {
+        font-size: 1.1rem;
+        color: #2eb451;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    i {
+        font-size: 1.5rem;
+        color: #2eb451;
+        cursor: pointer;
+    }
+
+    i:hover {
+        color: #26793c;
+    }
+`;
