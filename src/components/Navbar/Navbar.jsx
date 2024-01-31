@@ -7,6 +7,7 @@ import { Button } from "../Button/Button.jsx";
 import { searchSchema } from "../../utils/schemas/searchSchema.jsx";
 import { userLogged } from "../../services/userService.js";
 import { useEffect } from "react";
+import Cookies from "js-cookie";
 
 export function Navbar() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm({
@@ -29,13 +30,11 @@ export function Navbar() {
         }
     }
 
-    /*
     useEffect(() => {
         if (Cookies.get("token")) {
             findUserLogged();
         }
     }, []);
-    */
 
     return (
         <>
