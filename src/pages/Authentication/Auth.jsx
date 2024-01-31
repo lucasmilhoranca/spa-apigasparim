@@ -7,6 +7,8 @@ import { GreenButton, OrangeButton } from "../../components/Button/Button";
 import { signSchema } from "../../utils/schemas/signSchema";
 import { ErrorSpan } from "../../components/Navbar/NavbarStyled";
 import { createUser, loginUser } from "../../services/userService";
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 export function Auth() {
 
@@ -14,10 +16,14 @@ export function Auth() {
         resolver: zodResolver(signSchema),
     });
 
+    const navigate = useNavigate();
+
     async function inHandleSubmit(data) {
         try {
             const response = await loginUser(data);
-            console.log(response);
+
+            Cookies.set("token", response.data.token, { expires: 1 });
+            navigate("/");
         } catch (error) {
             console.log(error);
         } 
@@ -26,7 +32,8 @@ export function Auth() {
     async function onHandleSubmit(data) {
         try {
             const response = await createUser(data);
-            console.log(response);
+            
+            reset();
         } catch (error) {
             console.log(error);
         }
