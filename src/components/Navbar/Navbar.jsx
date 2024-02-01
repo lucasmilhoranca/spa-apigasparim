@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Button } from "../Button/Button.jsx";
 import { searchSchema } from "../../utils/schemas/searchSchema.jsx";
 import { userLogged } from "../../services/userService.js";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import Cookies from "js-cookie";
 import { UserContext } from "../../Context/userContext.jsx";
 
@@ -67,7 +67,7 @@ export function Navbar() {
                         <h2>{user.usuario}</h2>
                         <i className="bi bi-box-arrow-right" onClick={signout}></i>
                     </UserLoggedSpace>
-                    
+
                 ) : (
                     <Link to="/auth">
                         <Button type="button" text="Entrar" cor="#2eb451" />
