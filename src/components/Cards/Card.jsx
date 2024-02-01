@@ -2,7 +2,6 @@ import { formatCPF, formatDate, formatTime } from "../../utils/formatting";
 import { CardBody, CardContainer, StatusContainer, GreenCircle, RedCircle } from "./CardStyle";
 
 export function Card(props) {
-    
 
     return (
         <CardContainer>
@@ -22,5 +21,4 @@ export function Card(props) {
             </StatusContainer>
         </CardContainer>
     );
-
 }
