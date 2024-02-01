@@ -12,8 +12,7 @@ export function Card(props) {
             </CardBody>
             <CardBody>
                 <h2>Entrada: {formatTime(props.horarioEntrada)}</h2>
-                <h2>Saída: {formatTime(props.horarioSaida)}</h2>
-                
+                <h2>Saída: {formatTime(props.horarioSaida)}</h2>  
             </CardBody>
             <StatusContainer style={{ marginLeft: 10 }}>
                     <label>{props.status === 1 ? "In" : "Out"}&nbsp;</label>
