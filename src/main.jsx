@@ -10,6 +10,7 @@ import { Auth } from './pages/Authentication/Auth.jsx'
 import Cadastro from './pages/Cadastro/Cadastro.jsx'
 import Check from './pages/Check/Check.jsx'
 import UserProvider from './Context/userContext.jsx'
+import './index.css'
 
 const router = createBrowserRouter([
 	{
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
 			{
 				path: '/search/:cpf',
 				element: <Search />
+			},
+			{
+				path: 'check',
+				element: <Check />
 			}
 		]
 	},
@@ -35,10 +40,7 @@ const router = createBrowserRouter([
 		path: '/cadastro',
 		element: <Cadastro />
 	},
-	{
-		path: 'check',
-		element: <Check />
-	}
+	
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
