@@ -11,7 +11,6 @@ export default function Check() {
     async function getPessoas() {
         const response = await getAllPessoas();
         setPessoas(response.data);
-        console.log(response.data);
     }
 
     useEffect(() => {
@@ -21,9 +20,9 @@ export default function Check() {
     return (
         <>
             <section className="pt-4 w-full grid grid-cols-2 items-center">
-                {pessoas.map((item) => {
+                {pessoas.map((item, index) => {
                     return <CardPessoa
-                        key={item.id} 
+                        key={item._id} 
                         cpf={item.cpf}
                         nome={item.nome} 
                         sobrenome={item.sobrenome} 
