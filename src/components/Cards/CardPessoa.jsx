@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 
 export default function CardPessoa(props) {
 
-    const { register, handleSubmit, formState: { errors } } = useForm()
+    const {  handleSubmit, formState: { errors } } = useForm()
 
     const [status, setStatus] = useState(0)
 
@@ -33,7 +33,7 @@ export default function CardPessoa(props) {
                             <h4>SETOR: {props.setor}</h4>
                             <h4>DEPARTAMENTO: {props.departamento}</h4>
                             <h4>TIPO: {props.tipo}</h4>
-                            
+
                             {props.tipo === "Funcionario" && (
                                 <h4>CARGO: {props.cargo}</h4>
                             )}
