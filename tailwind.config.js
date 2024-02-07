@@ -5,27 +5,29 @@ export default {
     "./src/**/*.{js,jsx}",
   ],
   theme: {
-    colors: {
-      'primary-green': {
-        100: '#2eb451',
-        200: '#00a151',
+    extend: {
+      colors: {
+        'primary-green': {
+          100: '#2eb451',
+          200: '#00a151',
+        },
+        'primary-orange': {
+          100: '#ffa400',
+          200: '#f69f14',
+        },
+        'secondary': {
+          'green': '#12a53a',
+          'orange': '#ea592b',
+          'rose': '#fde2cd',
+          'yellow': '#ffdd1c',
+        }
       },
-      'primary-orange': {
-        100: '#ffa400',
-        200: '#f69f14',
-      },
-      'secondary': {
-        'green': '#12a53a',
-        'orange': '#ea592b',
-        'rose': '#fde2cd',
-        'yellow': '#ffdd1c',
-      }
+      
     },
     fontFamily: {
-      'sora': ['Sora', 'sans-serif'],
-      'exo2': ['"Exo 2"', 'sans-serif'],
+      'sora': ['Sora'],
+      'exo2': ['"Exo 2"'],
     },
-    extend: {},
   },
   plugins: [],
 }
