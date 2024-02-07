@@ -23,7 +23,7 @@ export default {
     },
     fontFamily: {
       'sora': ['Sora', 'sans-serif'],
-      'exo2': ['Exo 2', 'sans-serif'],
+      'exo2': ['"Exo 2"', 'sans-serif'],
     },
     extend: {},
   },
