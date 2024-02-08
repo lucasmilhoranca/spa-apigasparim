@@ -7,24 +7,23 @@ import { useForm } from "react-hook-form";
 
 export default function CardPessoa(props) {
 
-    const {  handleSubmit, formState: { errors } } = useForm()
+    const { handleSubmit, formState: { errors } } = useForm()
 
     const [status, setStatus] = useState(0)
 
     async function findStatus() {
-        //buscar no axios se tem checkin para esse cpf
-        console.log("deu")
+        // TODO: Buscar no axios se tem checkin para esse cpf
+        setStatus(1)
     }
 
     async function onSubmit() {
+        // TODO: mandar para rota de checkIn ou checkOut
         console.log(props.cpf)
-        //mandar para rota de checkIn ou checkOut
     }
 
     return (
         <>
             <section className="flex flex-col max-w-full min-h-[200px] shadow-md rounded-md bg-white p-4 m-2">
-                {/*<section class="grid grid-cols-2 gap-10 mx-auto my-4 w-80">*/}
                 <Dialog.Root>
                     <Dialog.Trigger onClick={findStatus}>
                         <article className="grid grid-cols-2 items-center justify-center gap-4 m-4">
@@ -101,7 +100,6 @@ export default function CardPessoa(props) {
                         </Dialog.Content>
                     </Dialog.Portal>
                 </Dialog.Root>
-                {/*</section>*/}
             </section>
         </>
     )
