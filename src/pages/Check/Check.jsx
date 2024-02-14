@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { getAllPessoas } from "../../services/pessoaService";
-import { CheckBody, CheckContainer } from "./CheckStyled";
-import { formatCPF } from "../../utils/formatting";
 import CardPessoa from "../../components/Cards/CardPessoa";
 
 export default function Check() {
