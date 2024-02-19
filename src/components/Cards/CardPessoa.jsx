@@ -3,6 +3,7 @@ import { formatCPF } from "../../utils/formatting";
 import * as Dialog from '@radix-ui/react-dialog'
 import { X } from "lucide-react";
 import { useForm } from "react-hook-form";
+import { searchStatus } from "../../services/controleService";
 
 
 export default function CardPessoa(props) {
@@ -12,12 +13,18 @@ export default function CardPessoa(props) {
     const [status, setStatus] = useState(0)
 
     async function findStatus() {
-        // TODO: Buscar no axios se tem checkin para esse cpf
-        setStatus(1)
+        const response = await searchStatus(props.cpf)
+
+        setStatus(response.data.status)
     }
 
     async function onSubmit() {
-        // TODO: mandar para rota de checkIn ou checkOut
+        if (status === 0) {
+            // TODO: mandar para rota de checkIn
+        }
+        if (status === 1) {
+            // TODO: mandar para rota de checkOut
+        }
         console.log(props.cpf)
     }
 
