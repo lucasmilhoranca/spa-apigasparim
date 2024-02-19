@@ -19,3 +19,15 @@ export function searchStatus(cpf) {
     
     return response;
 }
+
+export function checkIn(cpf) {
+    const response = axios.post(`${baseURL}/control/checkin`, cpf);
+
+    return response;
+}
+
+export function checkOut(cpf) {
+    const response = axios.patch(`${baseURL}/control/checkout`, cpf);
+
+    return response;
+}
